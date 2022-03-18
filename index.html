@@ -5,29 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Static/CSS/index.css" type="text/css">   
+    <script src = "Static/JS/index.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
    
- <title>Document</title>
+ <title>Assignment 1</title>
 </head>
 <body>
     <img class="backgroundPattern" src='./Static/Images/1647276007949.png'>
-    <div class="container">
-        
-        <div class="personalInfo">
+
+    <div class="container" id = "container">
+        <div class="personalInfo" id = "personalInfo">
             <div class="personalIntro">
-                <img src = "./Static/Images/cvPic.JPG" class="personalImg">
+                <img src="./Static/Images/cvPic.JPG" alt="My Image" id = "myImg" class="personalImg">
                 <h2 class="personName"> <span style="font-weight: 400;">Hanan</span>  Munir</h2>
-        
                 <div >
                     <ul class="socialMediaLinks">
-
-                        <li><a class="clickable"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a class="clickable"><i class="fa-brands fa-github"></i></a></li>
-                        <li><a class="clickable"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a class="clickable" href = "https://www.facebook.com/hanan.munir.330/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a class="clickable" href = "https://github.com/hananmunir"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a class="clickable" href = "https://www.linkedin.com/in/hanan-munir-aa19031b0/"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -42,22 +41,25 @@
                 </ul>
             </div>
         </div>
+
         <div class="aboutSection">
             <div class="navbar" >
                 <ul class="navLinks" >
-                    <li>Skills</li>
-                    <li>Projects</li>
-                    <li>Education</li>
-                    <li>Contact Me</li>
+                    <li><a class="clickable" href = "#skills">Skills</a></li>
+                    <li><a class="clickable" href = "#projects" >Projects</a></li>
+                    <li><a class="clickable" href = "#education">Education</a></li>
+                    <li><a class="clickable" href = "#contact" >Contact Me</a></li>
                 </ul>
             </div>
             <div class="aboutMe">
-              
                 <h1 class="aboutTitle-L">About Me</h1>
-                <span class="aboutText"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque vero, in sapiente culpa mollitia alias est fugiat 
-                    eos modi quis pariatur nihil temporibus aperiam architecto adipisci doloremque ea voluptatem veritatis.</span>
+                <span class="aboutText">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorum itaque iusto a quia exercitationem consectetur 
+                    iste saepe sit alias obcaecati neque ipsum, facere ut dicta veritatis fugit maiores et? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum dolores excepturi adipisci animi velit. 
+                    Voluptas minima deleniti pariatur hic commodi dolores non magni corrupti molestias, eos ducimus consequatur eveniet dolorum.
+                </span>
             </div>
-            <div class="mySkills">
+            <div class="mySkills" id = "skills">
                 <h1 class="aboutTitle">What I'm Good At</h1>
                 <div class="skillCards">
                     
@@ -65,7 +67,7 @@
                         <i class="fa-brands fa-react skillIcon" ></i>
                         <div class="skillDesc">
                             <h3 class="skillTitle">React Js</h3>
-                            <span class="skillText">Good at design professional websites with react.js</span>
+                            <span class="skillText">Have been working with react for a few months now and have strong grip on it</span>
                         </div>
                     </div>
                     
@@ -73,7 +75,7 @@
                         <i class="fa-brands fa-node-js skillIcon"></i>
                         <div class="skillDesc">
                             <h3 class="skillTitle">Node Js</h3>
-                            <span class="skillText">Effecient at developing server side apps</span>
+                            <span class="skillText">Have worked on several Node projects and can work comfortable with Node</span>
                         </div>
                     </div>
                     
@@ -81,23 +83,25 @@
                         <i class="fa-solid fa-cube skillIcon"></i>
                         <div class="skillDesc">
                             <h3 class="skillTitle">3D Web</h3>
-                            <span class="skillText">Effecient at developing server side apps</span>
+                            <span class="skillText">3D web is an interesting aspect and it can really make your 
+                                application standout</span>
                         </div>
                     </div>
                     <div class="skillCard">
                         <i class="fa-brands fa-searchengin skillIcon"></i>
                         <div class="skillDesc">
                             <h3 class="skillTitle">Search Engine optimization</h3>
-                            <span class="skillText">Effecient at developing server side apps</span>
+                            <span class="skillText">In this world and age, it is really hard for unoptimized websites to 
+                                stand tall. So we all want an optimized website</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="myProjects">
+            <div class="myProjects" id = "projects">
                 <h1 class="aboutTitle">What I Worked On</h1>
                 <div class="projectCards">
                     <div class="projectCard" >
-                        <img src = "Static/Images/thibault-penin-AWOl7qqsffM-unsplash.jpg" alt = "Netflix Image">
+                        <img src = "Static/Images/thibault-penin-AWOl7qqsffM-unsplash.jpg" class = 'projectImg'alt = "Netflix Image">
                         <div class="cardOverlay">
                             <a class = "clickable" href = "https://netflix-clone-1bfbc.web.app/">  
                                 <h2>Netflix Clone(React)</h2>
@@ -105,15 +109,16 @@
                         </div>
                     </div>
                     <div class="projectCard">
-                        <img src="Static/Images/brooke-lark-W1B2LpQOBxA-unsplash.jpg" alt="E-commerce Image">
+                        <img src="Static/Images/brooke-lark-W1B2LpQOBxA-unsplash.jpg" class = 'projectImg'alt="E-commerce Image">
                         <div class="cardOverlay">
                             <a class = "clickable" href="https://oose-shopping-site.herokuapp.com/">
+                                <!-- This Was A Group Project -->
                                 <h2>E Commerce Site (Django)</h2>
                             </a>
                         </div>
                     </div>
                     <div class="projectCard">
-                        <img src="Static/Images/thibault-penin-AWOl7qqsffM-unsplash.jpg" alt="E-commerce Image">
+                        <img src="Static/Images/cardmapr-KEMb3TSbZBc-unsplash.jpg" class = 'projectImg'alt="E-commerce Image">
                         <div class="cardOverlay">
                             <a class = "clickable" href="https://shoppingsite-9e48a.web.app/">
                                 <h2>E commerce Site (React)</h3>
@@ -121,27 +126,59 @@
                         </div>
                     </div>
                     <div class="projectCard">
-                        <img src="Static/Images/cardmapr-KEMb3TSbZBc-unsplash.jpg" alt="Netflix Image">
-                        <div class="cardOverlay">
-                            <a class = "clickable"> 
-                                <h2>Tinder Clone(React)</h2>
+                        <img src="Static/Images/nasa-Q1p7bh3SHj8-unsplash.jpg" class = 'projectImg'alt="Netflix Image">
+                        <div class="cardOverlay" >
+                            <a class = "clickable" href="https://d-app-df6f2.web.app"> 
+                                <h2>Earth 3D(React)</h2>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="myEdu"><h1 class="aboutTitle">What I Have Done</h1>
-            <div class="educationCards">
-                
-            </div></div>
-            <div class="contactMe">
-                <h1 class="aboutTitle">How To Find Me</h1>
+            <div class="myEdu" id = "education">
+                <h1 class="aboutTitle">What I Have Done</h1>
+                <div class="educationCards">
+                    <div class="educationCard">
+                        <div class="nameOfDegree">
+                            <h4>Bachelors Of Software Engineering</h5>
+                            <span>2019 - present </span>
+                        </div>
+                        <div class="degreeDescription">
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic voluptates
+                                orem ipsum dolor sit amet consectetur, adipisicing elit. Hic voluptates </span>
+                        </div>
+                    </div>
+                    <div class="educationCard">
+                        <div class="nameOfDegree">
+                            <h4>Intermediate</h5>
+                            <span>2017 - 2019 </span>
+                        </div>
+                        <div class="degreeDescription">
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic voluptates </span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="contactMe" id = "contact">
+                <h1 class="aboutTitle">How To Find Me</h1>
+                <iframe
+               
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6810.17893771929!2d74.35106992552355!3d31.411660975622684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919070b00529871%3A0x7b5ead4b447a715d!2sHamza%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1647515757004!5m2!1sen!2s"
+                    width="100%" height="400rem" style="margin: 2rem 0;border:0;z-index: 999;border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="contact-col">
+                        <form style = "display: flex; flex-direction: column;" 
+                            action="">
+                            <div class="formTop">
+                                <input type="text" class="name" placeholder="Enter Your Full Name" required>
+                                <input type="email" class="email" placeholder="Enter your Email" required>
+                            </div>
+                            <textarea rows="7" placeholder="Message" required></textarea>
+                            <button class="btn">Submit</button>
+                        </form>
+                    </div>
+            </div>
+        
         </div>
     </div>
-
-    
-
-</script>
 </body>
 </html>

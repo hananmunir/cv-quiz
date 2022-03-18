@@ -45,6 +45,7 @@ body {
   margin-left: 3rem;
   transform: rotate(45deg);
 }
+
 .container {
   width: 90%;
   display: flex;
@@ -58,27 +59,35 @@ body {
 
 .personalInfo {
   background-color: #302c40;
-  width: 28%;
+  flex: 1;
   border-radius: 1.7rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  max-height: 77%;
+  transition: all 1s;
 }
-.personalImg {
-  max-width: 250px;
-  max-height: 250px;
-  border-radius: 1.5rem;
-  margin-bottom: 2rem;
-}
-.personName {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #fff;
-}
+
 .personalIntro {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.personalImg {
+  margin-top: -8rem;
+  z-index: 999;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 1s;
+}
+
+.personName {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
 }
 .socialMediaLinks {
   list-style-type: none;
@@ -111,34 +120,41 @@ body {
 
 .fa-facebook-f:hover {
   color: #4267b2;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.35rem);
 }
+
 .fa-github:hover {
   color: #6e5494;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.35rem);
 }
+
 .fa-linkedin-in:hover {
   color: #0e76a8;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.35rem);
 }
+
 .aboutSection {
   overflow-y: scroll;
   scroll-behavior: smooth;
-  width: 70%;
+  flex: 3;
+  margin-left: 2rem;
   background-color: #302c40;
   border-radius: 1.7rem;
   padding: 0 2rem;
 }
+
 .navbar {
   top: 0;
+  z-index: 999;
   position: sticky;
 }
+
 .navLinks {
   padding: 2rem 0;
   background-color: #302c40;
   width: 100%;
   float: right;
-  z-index: 1000;
+
   display: flex;
   list-style-type: none;
   justify-content: right;
@@ -149,14 +165,17 @@ body {
   cursor: pointer;
   margin-left: 5rem;
 }
+
 .aboutMe {
   margin-bottom: 1.7rem;
 }
+
 .aboutTitle-L {
   color: #fff;
   font-size: 2.3rem;
   margin: 0.7rem 0;
 }
+
 .aboutTitle {
   color: #fff;
 }
@@ -166,10 +185,15 @@ body {
   color: #1570d1;
   margin-right: 0.7rem;
 }
+
+.myProjects {
+  margin: 1rem 0;
+}
 .skillCards,
 .projectCards {
-  margin: 1rem 0;
+  margin: 2rem 0;
   display: flex;
+
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -195,10 +219,12 @@ body {
   text-decoration: none;
   color: #e9e7e3;
 }
+
 .projectCard {
   position: relative;
   margin-bottom: 1rem;
 }
+
 .projectCard img {
   width: 415px;
   border-radius: 1rem;
@@ -206,6 +232,7 @@ body {
   opacity: 0.9;
   z-index: 1;
 }
+
 .cardOverlay {
   z-index: 1;
   border-radius: 1rem;
@@ -225,5 +252,200 @@ body {
 }
 
 .cardOverlay a h2 {
-  margin: 30% 20%;
+  margin: 30% 25%;
+}
+
+.educationCards {
+  margin: 2rem 0 3rem 0;
+}
+
+.educationCard {
+  display: flex;
+
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.nameOfDegree {
+  background-color: #272333;
+  min-width: 35%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  padding: 1.7rem 0.6rem;
+}
+
+.degreeDescription {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.contactMe {
+  width: 100%;
+  align-items: center;
+}
+
+.contactMe {
+  margin: 1rem 0 3rem 0;
+}
+
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  font-family: "IBM Plex Sans", sans-serif;
+  display: block;
+  color: #fff;
+  padding: 0.7rem;
+  border-radius: 0.35rem;
+  margin-bottom: 1rem;
+  border: none;
+  word-wrap: break-word;
+  background-color: #272333;
+}
+
+.contact-col input:focus,
+.contact-col textarea:focus {
+  outline: none;
+}
+
+.formTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.formTop input {
+  width: 47%;
+}
+
+.btn {
+  width: 20%;
+  align-self: center;
+  padding: 0.7rem 2.3rem;
+  color: #fff;
+  background-color: #ff6d3f;
+
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.7s ease-out all;
+}
+
+.btn:hover {
+  border: 1px solid #ff6d3f;
+  background-color: transparent;
+  color: #ff6d3f;
+
+  letter-spacing: 0.1rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .nameOfDegree h2 {
+    font-size: 2rem;
+  }
+  .nameOfDegree span {
+    font-size: 0.8rem;
+  }
+
+  .degreeDescription span {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 777px) {
+  .container {
+    flex-direction: column;
+  }
+  .aboutSection {
+    margin: 2rem 0;
+  }
+  .btn {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  body {
+    box-sizing: border-box;
+  }
+  .container {
+    flex-direction: column;
+    height: 100%;
+  }
+  .aboutSection {
+    margin: 0;
+    margin: 2rem 0;
+  }
+  .personalImg {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .personalLinks {
+    align-items: center;
+  }
+  .skillCards {
+    flex-direction: column;
+  }
+  .skillCard {
+    min-width: 90%;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+  .navbar {
+    display: none;
+  }
+  .aboutSection {
+    overflow: visible;
+  }
+
+  .educationCard {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 2em auto;
+  }
+
+  .nameOfDegree {
+    width: 80%;
+    margin-bottom: 2rem;
+    padding: 0.6rem;
+  }
+  .aboutMe,
+  .mySkills,
+  .myEdu,
+  .contactMe,
+  .myProjects {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .personalImg {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .personName {
+    font-size: 2rem;
+  }
+  .projectCard img {
+    max-width: 100%;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1420px) {
+  .projectCards {
+    justify-content: center;
+  }
+
+  .projectCard img {
+    width: 380px;
+  }
+}
+
+@media screen and (min-height: 780px) {
+  .personalInfo {
+    height: 70%;
+  }
 }
