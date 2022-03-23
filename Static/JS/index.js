@@ -1,9 +1,11 @@
+// bindings
 $(document).ready(function () {
   imageAdjuster();
   loadParticles();
   //$("#my-form").submit(handleSubmit());
 });
 
+// Adjusts Profile Image
 function imageAdjuster() {
   var myImg = document.getElementById("myImg");
   var personalInfo = document.getElementById("personalInfo");
@@ -21,16 +23,18 @@ function imageAdjuster() {
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
   });
 }
+//Loads Particles
 function loadParticles() {
   particlesJS.load(
     "particles-js",
-    "./static/Plugins/Particles.json",
+    "./Static/Plugins/Particles.json",
     function () {
       console.log("callback - particles.js config loaded");
     }
   );
 }
 
+//For form submition
 async function handleSubmit(event) {
   event.preventDefault();
   var form = document.getElementById("my-form");
