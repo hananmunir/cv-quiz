@@ -12,11 +12,13 @@ FF4C29 redish
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  position: relative;
+}
 body {
-  background-color: #272333;
-  color: #e9e7e3;
-  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #f5f8f9 !important;
+  color: #5e6e80 !important;
+  font-family: "IBM Plex Sans", sans-serif !important;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -37,43 +39,34 @@ body {
   background: #555;
 }
 
-.backgroundPattern {
-  z-index: -1;
+.particlesContainer {
   position: absolute;
   top: 0;
-  margin-top: 0.2rem;
-  margin-left: 3rem;
-  transform: rotate(45deg);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: 0;
+}
+.particlesContainer .particles-js-canvas-el {
+  height: 100%;
+}
+.row {
 }
 
-.container {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  margin-top: 12rem;
-  margin-bottom: 5rem;
-  justify-content: space-between;
-  height: 85vh;
-}
-
+/* Personal Info Styling */
 .personalInfo {
-  background-color: #302c40;
+  background-color: #fff;
   flex: 1;
   border-radius: 1.7rem;
-  display: flex;
-  flex-direction: column;
   padding: 2rem;
-  max-height: 77%;
   transition: all 1s;
+  z-index: 2;
 }
-
 .personalIntro {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-
 .personalImg {
   margin-top: -8rem;
   z-index: 999;
@@ -83,25 +76,39 @@ body {
   margin-bottom: 2rem;
   transition: all 1s;
 }
-
 .personName {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #fff;
+  color: #5e6e80;
+}
+.cd-headline {
+  margin-bottom: 0;
+}
+.cd-words-wrapper::after {
+  background: rgb(83, 83, 200) !important;
+  background: linear-gradient(
+    to right,
+    rgba(83, 83, 200, 1) 20%,
+    rgba(150, 150, 205, 1) 48%,
+    rgba(200, 192, 192, 1) 89%
+  ) !important;
+  border-radius: 0.08rem;
+}
+.word-loader b {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 .socialMediaLinks {
   list-style-type: none;
   display: flex;
   flex-direction: row;
 }
-
 .socialMediaLinks li {
   margin: 1rem;
 }
 .fa {
   margin-right: 0.6rem;
 }
-
 .personalLinks {
   list-style-type: none;
   display: flex;
@@ -110,129 +117,99 @@ body {
 .personalLinks li {
   margin-bottom: 0.7rem;
 }
-
 .fa-facebook-f,
 .fa-github,
 .fa-linkedin-in {
+  color: #44566c;
   cursor: pointer;
   transition: 0.5s ease-out all;
 }
-
 .fa-facebook-f:hover {
   color: #4267b2;
   transform: translateY(-0.35rem);
 }
-
 .fa-github:hover {
-  color: #6e5494;
+  color: #5e6e80;
   transform: translateY(-0.35rem);
 }
-
 .fa-linkedin-in:hover {
   color: #0e76a8;
   transform: translateY(-0.35rem);
 }
+/* About Me Styling */
 
 .aboutSection {
+  background-color: #fff;
   overflow-y: scroll;
+  height: 90vh !important;
   scroll-behavior: smooth;
-  flex: 3;
-  margin-left: 2rem;
-  background-color: #302c40;
   border-radius: 1.7rem;
-  padding: 0 2rem;
+  padding: 0 2rem !important;
+  z-index: 2;
 }
-
-.navbar {
-  top: 0;
-  z-index: 999;
-  position: sticky;
-}
-
-.navLinks {
-  padding: 2rem 0;
-  background-color: #302c40;
-  width: 100%;
-  float: right;
-
-  display: flex;
-  list-style-type: none;
-  justify-content: right;
-}
-
-.navLinks li {
-  font-size: 1.08rem;
-  cursor: pointer;
-  margin-left: 5rem;
-}
-
 .aboutMe {
-  margin-bottom: 1.7rem;
+  margin-bottom: 1.5rem;
 }
-
 .aboutTitle-L {
-  color: #fff;
+  color: #5e6e80;
   font-size: 2.3rem;
   margin: 0.7rem 0;
 }
-
 .aboutTitle {
-  color: #fff;
+  color: #5e6e80;
+  font-size: 2rem;
 }
-
+/* Projects */
 .skillIcon {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #1570d1;
   margin-right: 0.7rem;
 }
 
-.myProjects {
-  margin: 1rem 0;
-}
-.skillCards,
 .projectCards {
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
-
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .skillCard {
-  background-color: #2c283a;
+  background-color: #f5f8f9;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem !important;
   display: flex;
+  align-items: center;
   flex-direction: row;
   max-width: 48%;
   margin: 0.8rem 0;
 }
-
 .clickable {
   cursor: pointer;
-  text-decoration: none;
-  color: #e9e7e3;
+  text-decoration: none !important;
+  color: #e9e7e3 !important;
 }
-
+.skillTitle {
+  font-size: 1.3rem;
+}
+.skillDescription {
+  font-size: 1rem;
+}
 .clickable:active {
   text-decoration: none;
   color: #e9e7e3;
 }
-
 .projectCard {
-  position: relative;
+  width: 48%;
   margin-bottom: 1rem;
+  position: relative !important;
 }
-
 .projectCard img {
-  width: 415px;
+  width: 100%;
   border-radius: 1rem;
   object-fit: contain;
   opacity: 0.9;
   z-index: 1;
 }
-
 .cardOverlay {
   z-index: 1;
   border-radius: 1rem;
@@ -245,15 +222,141 @@ body {
   left: 0;
   transition: 0.5s;
 }
-
 .cardOverlay:hover {
   opacity: 1;
   cursor: pointer;
 }
-
-.cardOverlay a h2 {
-  margin: 30% 25%;
+.centerOverlayText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.centerOverlayText h2 {
+  font-size: 1.7rem;
+}
+.timeline-wrapper {
+  border-left: 2px dotted rgba(114, 114, 248, 0.3);
+  margin-top: 1.5em;
+}
+.timeline-wrapper .item {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  position: relative;
+}
+.timeline-wrapper .item p {
+  margin-bottom: 0.1rem;
+}
+.timeline-wrapper .item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(114, 114, 248, 0.9);
+  border-radius: 50%;
+  margin-left: -22px;
+}
+.year {
+  font-size: 0.9rem;
+}
+.degree-title {
+  font-size: 1.2rem;
+}
+.degree-desc {
+  font-size: 0.97rem;
+}
+/* Contact Me */
+
+.contactMe {
+  margin: 1rem 0 3rem 0;
+}
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  font-family: "IBM Plex Sans", sans-serif;
+
+  color: #5e6e80;
+  padding: 0.7rem;
+  border-radius: 0.35rem;
+  margin-bottom: 1rem;
+  border: none;
+  word-wrap: break-word;
+  background-color: #f5f8f9;
+}
+.contact-col input:focus,
+.contact-col textarea:focus {
+  outline: none;
+}
+.formTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.formTop input {
+  width: 47%;
+}
+.btn {
+  width: 20%;
+  align-self: center;
+  padding: 0.7rem 2.3rem;
+  color: #fff !important;
+  background-color: #ff6d3f !important;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  transition: 0.7s ease-out all !important;
+}
+.btn:hover {
+  border: 1px solid #ff6d3f !important;
+  background-color: transparent !important;
+  color: #ff6d3f !important;
+  letter-spacing: 0.1rem;
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 35%;
+  }
+}
+@media (max-width: 800px) {
+  .projectCards {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .projectCard {
+    width: 90%;
+  }
+}
+
+/* 
+
+.navbar {
+  top: 0;
+  z-index: 999;
+  position: sticky;
+}
+
+.navLinks {
+  padding: 2rem 0;
+  background-color: #302c40;
+  width: 100%;
+  float: right;
+  display: flex;
+  list-style-type: none;
+  justify-content: right;
+}
+
+.navLinks li {
+  font-size: 1.08rem;
+  cursor: pointer;
+  margin-left: 5rem;
+}
+
+
+
 
 .educationCards {
   margin: 2rem 0 3rem 0;
@@ -289,59 +392,6 @@ body {
   align-items: center;
 }
 
-.contactMe {
-  margin: 1rem 0 3rem 0;
-}
-
-.contact-col input,
-.contact-col textarea {
-  width: 100%;
-  font-family: "IBM Plex Sans", sans-serif;
-  display: block;
-  color: #fff;
-  padding: 0.7rem;
-  border-radius: 0.35rem;
-  margin-bottom: 1rem;
-  border: none;
-  word-wrap: break-word;
-  background-color: #272333;
-}
-
-.contact-col input:focus,
-.contact-col textarea:focus {
-  outline: none;
-}
-
-.formTop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.formTop input {
-  width: 47%;
-}
-
-.btn {
-  width: 20%;
-  align-self: center;
-  padding: 0.7rem 2.3rem;
-  color: #fff;
-  background-color: #ff6d3f;
-
-  border: 1px solid transparent;
-  cursor: pointer;
-  border-radius: 0.4rem;
-  transition: 0.7s ease-out all;
-}
-
-.btn:hover {
-  border: 1px solid #ff6d3f;
-  background-color: transparent;
-  color: #ff6d3f;
-
-  letter-spacing: 0.1rem;
-}
 
 @media only screen and (max-width: 420px) {
   .nameOfDegree h2 {
@@ -448,4 +498,4 @@ body {
   .personalInfo {
     height: 70%;
   }
-}
+} */

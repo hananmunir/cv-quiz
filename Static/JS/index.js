@@ -1,54 +1,65 @@
-var img, personalInfo, projectImg, lastScrollTop = 0;
+$(document).ready(function () {
+  imageAdjuster();
+  loadParticles();
+  //$("#my-form").submit(handleSubmit());
+});
 
-window.onload = function (){
-    img =  document.getElementById('myImg');
-    personalInfo = document.getElementById('personalInfo')
+function imageAdjuster() {
+  var myImg = document.getElementById("myImg");
+  var personalInfo = document.getElementById("personalInfo");
+  var lastScrollTop = 0;
 
-    // projectImg = document.getElementsByClassName('projectImg')
-    // console.log(projectImg)
-    // adjustPictureSize();
-
-    window.onscroll = function() {
-    var st = window.pageYOffset || document.documentElement.scrollTop; 
-    if (st > lastScrollTop){
-       personalInfo.style.maxHeight = "92%" ;
-       myImg.style.margin = 0;
-     
+  $(document).scroll(function () {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
+      personalInfo.style.maxHeight = "92%";
+      myImg.style.margin = 0;
     } else {
-        personalInfo.style.maxHeight = "70%" ;
-        myImg.style.marginTop = "-8rem";
-       
+      personalInfo.style.maxHeight = "70%";
+      myImg.style.marginTop = "-8rem";
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-};
-
+  });
+}
+function loadParticles() {
+  particlesJS.load(
+    "particles-js",
+    "./static/Plugins/Particles.json",
+    function () {
+      console.log("callback - particles.js config loaded");
+    }
+  );
 }
 
-/* 
-function adjustPictureSize(){
-    let width = screen.width
-
-    for(let i = 0; i < projectImg.length; i++)
-    {
-      
-        if(width < 500){
-            console.log("500")
-            projectImg[i].style.width = "300px"
-        }else if(width < 600){
-            console.log("800")
-            projectImg[i].style.width = "450px"
-        }
-        else if(width < 1100){
-            console.log("1100")
-            projectImg[i].style.width = "400px"
-        }
-        else if(width < 1490){
-            console.log("1400")
-            projectImg[i].style.width = "400px"
-        }
-        else if(width < 1800){
-            console.log("1800")
-            projectImg[i].style.width = "450px"
-        }
-    }
-} */
+async function handleSubmit(event) {
+  event.preventDefault();
+  var form = document.getElementById("my-form");
+  var status = document.getElementById("my-form-status");
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset();
+      } else {
+        response.json().then((data) => {
+          if (Object.hasOwn(data, "errors")) {
+            status.innerHTML = data["errors"]
+              .map((error) => error["message"])
+              .join(", ");
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    });
+}
